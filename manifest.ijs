@@ -12,12 +12,12 @@ Binary for Linux, install liblapacke (or similar) from your distro repository.
 For windows, download from http://icl.cs.utk.edu/lapack-for-windows/lapack/#libraries
 )
 
-VERSION=: '1.0.0'
+VERSION=: '1.0.2'
 
 RELEASE=: 'j602 j701 j801'
 
 FILES=: 0 : 0
-lapack.ijs
+lapacke.ijs
 test.ijs
 test0.ijs
 )
