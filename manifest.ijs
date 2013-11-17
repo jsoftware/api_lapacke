@@ -9,12 +9,12 @@ This package contains the LAPACKE C Interface to LAPACK
 http://www.netlib.org/lapack/lapacke.html
 
 Binary for Linux, install liblapacke (or similar) from your distro repository.
-For windows, it needs 6 dll files,
+For 64-bit windows, it needs 6 dll files,
 libblas.dll liblapack.dll liblapacke.dll : from http://icl.cs.utk.edu/lapack-for-windows/lapack/#libraries
 libgcc_s_sjlj-1.dll libgfortran-3.dll libquadmath-0.dll : runtime dll files from mingw
 )
 
-VERSION=: '1.0.2'
+VERSION=: '1.0.3'
 
 RELEASE=: 'j602 j701 j801'
 
