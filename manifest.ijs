@@ -24,4 +24,4 @@ test.ijs
 test0.ijs
 )
 
-PLATFORMS=: ''
+PLATFORMS=: 'linux win darwin android'
