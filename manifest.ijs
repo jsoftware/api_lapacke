@@ -16,7 +16,9 @@ libgcc_s_sjlj-1.dll libgfortran-3.dll libquadmath-0.dll : runtime dll files from
 
 VERSION=: '1.0.9'
 
-RELEASE=: 'j802 j803 j804 j805 j806 j807'
+RELEASE=: ''
+
+FOLDER=: 'api/lapacke'
 
 FILES=: 0 : 0
 lapacke.ijs
