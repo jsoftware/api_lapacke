@@ -13,7 +13,7 @@ Binary for Linux, install liblapacke (or similar) from your distro repository.
 
 VERSION=: '1.0.11'
 
-RELEASE=: ''
+RELEASE=: 'j804 j807'
 
 FOLDER=: 'api/lapacke'
 
