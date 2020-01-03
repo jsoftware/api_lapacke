@@ -8,6 +8,11 @@ if. UNAME-:'Linux' do.
   liblapacke=: 'liblapacke.so.3'
 elseif. UNAME-:'Android' do.
   arch=. LF-.~ 2!:0'getprop ro.product.cpu.abi'
+  if. IF64 < arch-:'arm64-v8a' do.
+    arch=. 'armeabi-v7a'
+  elseif. IF64 < arch-:'x86_64' do.
+    arch=. 'x86'
+  end.
   liblapacke=: (jpath'~bin/../libexec/',arch,'/liblapacke.so')
 elseif. do.
   ext=. (('Darwin';'Win') i. <UNAME) pick ;:'dylib dll so'
@@ -49,6 +54,11 @@ to=. liblapacke_jlapacke_
 if. UNAME-:'Android' do.
   path=. 'http://www.jsoftware.com/download/'
   arch=. LF-.~ 2!:0'getprop ro.product.cpu.abi'
+  if. IF64 < arch-:'arm64-v8a' do.
+    arch=. 'armeabi-v7a'
+  elseif. IF64 < arch-:'x86_64' do.
+    arch=. 'x86'
+  end.
   fm=. path,'android/libs/',z=. arch,'/liblapacke.so'
   'res p'=. httpget_jpacman_ fm
   if. res do.
