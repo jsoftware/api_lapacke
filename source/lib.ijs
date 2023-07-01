@@ -4,7 +4,7 @@ NB. =========================================================
 NB. library:
 NB. First part of this script is making sure the library is loaded
 3 : 0''
-if. UNAME-:'Linux' do.
+if. (<UNAME)e.'Linux';'FreeBSD';'OpenBSD' do.
   liblapacke=: 'liblapacke.so.3'
 elseif. UNAME-:'Android' do.
   arch=. LF-.~ 2!:0'getprop ro.product.cpu.abi'
@@ -22,7 +22,7 @@ end.
 
 NB. =========================================================
 checklibrary=: 3 : 0
-if. UNAME-:'Linux' do.
+if. (<UNAME)e.'Linux';'FreeBSD';'OpenBSD' do.
   if. 0-: (liblapacke, ' LAPACKE_get_nancheck i ')&cd ::0: '' do.
     sminfo 'liblapacke package has not yet been installed.'
   end.
@@ -40,7 +40,7 @@ NB. =========================================================
 NB. get lapacke binary
 NB. uses routines from pacman
 getbin=: 3 : 0
-if. +./ IFIOS,(UNAME-:'Linux') do. return. end.
+if. +./ IFIOS,((<UNAME)e.'Linux';'FreeBSD';'OpenBSD') do. return. end.
 if. IFWIN *. -. fexist '~addons/math/lapack/jlapack',(IF64#'64'),'.dll' do.
   smoutput 'Install math/lapack first. Need jlapack',(IF64#'64'),'.dll'
   return.
@@ -77,7 +77,7 @@ res=. ''
 fail=. 0
 try.
   fail=. _1-: res=. shellcmd cmd
-  2!:0 ::0:^:(UNAME-:'Linux') 'chmod 644 ', dquote to
+  2!:0 ::0:^:((<UNAME)e.'Linux';'FreeBSD';'OpenBSD') 'chmod 644 ', dquote to
 catch. fail=. 1 end.
 if. fail +. 0 >: fsize to do.
   if. _1-:msg=. freads lg do.

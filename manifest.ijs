@@ -11,7 +11,7 @@ http://www.netlib.org/lapack/lapacke.html
 Binary for Linux, install liblapacke (or similar) from your distro repository.
 )
 
-VERSION=: '1.0.12'
+VERSION=: '1.0.13'
 
 RELEASE=: 'j804 j807'
 
